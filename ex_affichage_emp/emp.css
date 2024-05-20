@@ -1,0 +1,46 @@
+#root {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+#insert {
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: aquamarine;
+}
+#affichage {
+  color: red;
+}
+
+h1 {
+  color: blueviolet;
+}
+
+#titre2{
+  color: black;
+}
+
+.JF{
+  background-color: chartreuse;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  margin: 1rem;
+  border: 1px solid gray;
+}
+
+@media screen and (min-width: 600px) {
+  .card {
+    flex: 1 1 calc(50% - 2rem);
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .card {
+    flex: 1 1 calc(33% - 2rem);
+  }
+}
