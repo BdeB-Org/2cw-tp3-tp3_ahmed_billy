@@ -1,0 +1,145 @@
+/* index.css */
+
+/* Style de base pour le corps */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #e0f7e9; /* Vert pâle */
+    color: #333; /* Texte légèrement foncé pour la lisibilité */
+    line-height: 1.6;
+}
+
+/* Style pour l'en-tête */
+header {
+    background-color: #2e8b57; /* Vert plus foncé */
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+/* Style pour la navigation */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Style pour le contenu principal */
+main {
+    padding: 20px;
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #e6ffe6; /* Vert très pâle */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style pour le formulaire de recherche */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin-top: 10px;
+}
+
+form input {
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #2e8b57; /* Vert plus foncé */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #267347; /* Vert encore plus foncé */
+}
+
+/* Style pour la liste des résultats de recherche */
+#resultats-recherche ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#resultats-recherche li {
+    background: #b2dfdb; /* Vert pâle */
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition:  0.3s;
+}
+
+#resultats-recherche li:hover {
+    background: #a2d5c6; /* Vert légèrement plus foncé pour l'effet de survol */
+}
+
+/* Style pour les span dans les résultats */
+#resultats-recherche li span {
+    font-size: 16px;
+}
+
+/* Style pour le pied de page */
+footer {
+    background-color: #2e8b57; /* Vert plus foncé */
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Media queries pour les petits écrans */
+@media (max-width: 600px) {
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    main {
+        margin: 10px;
+        padding: 10px;
+    }
+}
