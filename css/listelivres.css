@@ -1,0 +1,91 @@
+/* index.css */
+
+/* Style de base pour le corps */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333333;
+    line-height: 1.6;
+}
+
+/* Style pour l'en-tête */
+header {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+/* Style pour la navigation */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Style pour le contenu principal */
+main {
+    padding: 20px;
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style pour la liste des livres */
+#livres-list, #livres {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#livres-list li, #livres li {
+    background: #e2e2e2;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition:  0.3s;
+}
+
+#livres-list li:hover, #livres li:hover {
+    background: #d1d1d1;
+}
+
+/* Style pour les span dans la liste des livres */
+#livres-list li span, #livres li span {
+    font-size: 16px;
+}
+
+/* Style pour le pied de page */
+footer {
+    background-color: #4CAF50;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+  
+}
