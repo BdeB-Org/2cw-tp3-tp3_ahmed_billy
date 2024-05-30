@@ -5,11 +5,13 @@
     font-family: "Poppins", sans-serif;
 }
 
-body{
+body {
     min-height: 100vh;
-    background: url(../images/Image_principale.avif) no-repeat;
+    background: url(../images/montagne.jpg) no-repeat center center fixed;
     background-size: cover;
     background-position: center;
+    margin: 0;
+    padding: 0;
 }
 
 .header {
@@ -18,56 +20,98 @@ body{
     left: 0;
     width: 100%;
     padding: 20px 100px;
-    background: black;
-    display:flex;
+    background: transparent;
+    display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 100;
 }
 
-.logo{
+.logo {
     font-size: 32px;
     color: #fff;
     text-decoration: none;
     font-weight: 700;
 }
 
-.bar a{
+.bar a {
     position: relative;
     font-size: 18px;
     color: white;
     font-weight: 500;
     text-decoration: none;
-    margin-left:40px;
+    margin-left: 40px;
 }
 
-.bar a::before{
-content:'';
-position: absolute;
-top:100%;
-left:0;
-width: 0;
-height:2px;
-background: white;
-transition: .3s;
+.bar a::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: white;
+    transition: .3s;
 }
 
-.bar a:hover::before{
+.bar a:hover::before {
     width: 100%;
 }
 
+.content {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+}
 
+.content h1{
+    font-size: 70px;
+    margin-top:-100px;
+}
 
+.content p {
+    margin: 20 px auto;
+    font-weight: 100;
+    line-height: 25px;
+}
 
+button{
+    width: 200px;
+    padding:15px 0;
+    text-align: center;
+    margin: 20px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid #fff;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
 
+span{
+    background:cadetblue;
+    height: 100%;
+    width:0;
+    border-radius: 25px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index:-1;
+    transition: 0.5s;
 
+}
 
+button:hover span {
+    width: 100%;
+}
 
+button:hover{
+ border:none;
 
-
-
-
-
-
-
-
+}
