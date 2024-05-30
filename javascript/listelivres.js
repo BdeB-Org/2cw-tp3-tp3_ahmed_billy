@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
         // Remplit le span avec les informations du livre
-        span.textContent = `${livre.id} - ${livre.titre} par ${livre.auteur} (Genre: ${livre.genre || 'Non spécifié'})`;
+        span.textContent = `${livre.id} - ${livre.titre} par ${livre.auteur} (Genre: ${livre.genre || 'Non déclaré'})`;
         li.appendChild(span); 
         livresS.appendChild(li); 
       });
