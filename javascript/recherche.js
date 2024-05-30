@@ -29,6 +29,9 @@ document.addEventListener("DOMContentLoaded", function() {
             (genre === "" || (livre.genre && livre.genre.toLowerCase().includes(genre)))
           );
   
+
+          //Section Résultats
+          
           const resultatsDiv = document.getElementById("livres");
           resultatsDiv.innerHTML = '';
   
