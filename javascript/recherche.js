@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function() {
         form.addEventListener("submit", function(event) {
           event.preventDefault();
 
-          //Ici on veut mettre les résultats de requête en miniscule
+          //Ici on veut mettre les résultats de requête en miniscule car il faut qu'on respecte la casse
           const titre = document.getElementById("titre").value.toLowerCase();
           const auteur = document.getElementById("auteur").value.toLowerCase();
           const genre = document.getElementById("genre").value.toLowerCase();
