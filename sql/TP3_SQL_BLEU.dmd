@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="TP3_SQL_BLEU" id="6A5D3AC7-AA16-BC76-0481-4062CA92880E" version="3.5">
+<createdBy>Billy</createdBy>
+<createdTime>2024-05-18 20:56:38 UTC</createdTime>
+<ownerDesignName>TP3_SQL_BLEU</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>6A5D3AC7-AA16-BC76-0481-4062CA92880E</designId>
+</OSDM_Design>
