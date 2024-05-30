@@ -59,7 +59,7 @@ body {
 }
 
 
-/* Style de base pour le corps */
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -69,7 +69,7 @@ body {
     line-height: 1.6;
 }
 
-/* Style pour l'en-tête */
+
 header {
     background-color: #4CAF50;
     color: #fff;
@@ -81,7 +81,7 @@ header h1 {
     margin: 0;
 }
 
-/* Style pour la navigation */
+
 nav ul {
     list-style: none;
     padding: 0;
@@ -106,7 +106,7 @@ nav ul li a:hover {
 
 
 
-/* Style pour la liste des livres */
+
 #livres-list, #livres {
     list-style: none;
     padding: 0;
@@ -130,7 +130,7 @@ nav ul li a:hover {
 
 
 #h1 {
-    padding-top: 100px; /* ou la valeur qui vous convient pour décaler le titre */
+    padding-top: 100px; 
 }
 
 
