@@ -5,15 +5,9 @@
     font-family: "Poppins", sans-serif;
 }
 
-<<<<<<< HEAD
-body{
-    min-height: 60vh;
-    background: url(../images/Image_principale.avif) no-repeat;
-=======
 body {
     min-height: 100vh;
     background: url(../images/montagne.jpg) no-repeat center center fixed;
->>>>>>> Billy
     background-size: cover;
     background-position: center;
     margin: 0;
@@ -27,11 +21,7 @@ body {
     width: 100%;
     padding: 20px 100px;
     background: transparent;
-<<<<<<< HEAD
-    display:flex;
-=======
     display: flex;
->>>>>>> Billy
     justify-content: space-between;
     align-items: center;
     z-index: 100;
