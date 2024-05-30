@@ -96,28 +96,28 @@ form button {
 }
 
 .resultats-container h2 {
-    color: black; /* Green text */
+    color: black; 
     margin-bottom: 1rem;
 }
 
 .resultats-container div {
     margin-bottom: 1rem;
     padding: 1rem;
-    border: 1px solid black; /* Green border */
+    border: 1px solid black; 
     border-radius: 5px;
-    background-color: #e8f5e9; /* Light green background */
+    background-color: #e8f5e9; 
 }
 
 .resultats-container span {
     display: block;
     font-size: 1.1rem;
     margin-bottom: 0.5rem;
-    color: black; /* Green text */
+    color: black; 
 }
 
 main {
     padding: 2rem;
-    margin-top: 100px; /* ou la valeur qui vous convient pour décaler le contenu vers le bas */
+    margin-top: 100px; 
 }
 
 
