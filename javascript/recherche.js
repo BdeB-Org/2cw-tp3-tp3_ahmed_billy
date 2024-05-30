@@ -1,126 +1,51 @@
-// Fonction pour créer un nouvel élément
-function createNode(element) {
-    return document.createElement(element);
-}
-
-// Fonction pour ajouter un élément à un parent
-function append(parent, el) {
-    return parent.appendChild(el);
-}
-
-// Récupération du formulaire et de l'élément où afficher les résultats
-const formRecherche = document.getElementById("rechercher-livre-form");
-const main = document.querySelector("main");
-
-form.addEventListener("submit", function (event) {
-    event.preventDefault(); // Empêche le rechargement de la page
-
-    // Récupère les valeurs des champs du formulaire
-    const titre = document.getElementById("titre").value;
-    const auteur = document.getElementById("auteur").value;
-    const genre = document.getElementById("genre").value;
-    const disponibiliter = document.getElementById("disponibiliter").value;
-
-    // URL de l'API avec les paramètres de recherche
-    const url = `http://localhost:8080/ords/utilisateurs/recherche/?titre=${titre}&auteur=${auteur}&genre=${genre}&disponibiliter=${disponibiliter}`;
-
-    // Effectue la requête de recherche
+document.addEventListener("DOMContentLoaded", function() {
+    function createNode(element) {
+      return document.createElement(element);
+    }
+  
+    function append(parent, el) {
+      return parent.appendChild(el);
+    }
+  
+    function displayBooks(books) {
+      const resultatsDiv = document.getElementById("livres");
+      resultatsDiv.innerHTML = ''; // Clear the list before displaying new results
+      books.forEach(function (livre) {
+        let div = createNode("div"),
+            span = createNode("span");
+        span.innerHTML = `${livre.id} - ${livre.titre} par ${livre.auteur}`;
+        append(div, span);
+        append(resultatsDiv, div);
+      });
+    }
+  
+    const url = "http://localhost:8080/ords/utilisateurs/livres/";
+  
     fetch(url)
-        .then((resp) => resp.json())
-        .then(function (data) {
-            // Supprime les résultats précédents
-            const previousResults = document.getElementById("resultats-recherche");
-            if (previousResults) {
-                main.removeChild(previousResults);
-            }
-
-            // Crée un conteneur pour les résultats
-            const resultsContainer = createNode("div");
-            resultsContainer.id = "resultats-recherche";
-
-            // Affiche les résultats de la recherche
-            let livres = data.items;
-            if (livres.length === 0) {
-                const noResultsMessage = createNode("p");
-                noResultsMessage.innerHTML = "Aucun livre trouvé.";
-                append(resultsContainer, noResultsMessage);
-            } else {
-                let ul = createNode("ul");
-                livres.forEach(function (livre) {
-                    let li = createNode("li"),
-                        span = createNode("span");
-                    span.innerHTML = `${livre.id} - ${livre.titre} par ${livre.auteur} (Genre: ${livre.genre}, Disponibilité: ${livre.disponibiliter})`;
-                    append(li, span);
-                    append(ul, li);
-                });
-                append(resultsContainer, ul);
-            }
-            append(main, resultsContainer);
-        })
-        .catch(function (error) {
-            console.log(JSON.stringify(error));
+      .then((resp) => resp.json())
+      .then(function (data) {
+        let livres = data.items;
+  
+        const form = document.getElementById("rechercher-livre-form");
+        form.addEventListener("submit", function(event) {
+          event.preventDefault();
+          const titre = document.getElementById("titre").value.toLowerCase();
+          const auteur = document.getElementById("auteur").value.toLowerCase();
+          const genre = document.getElementById("genre").value.toLowerCase();
+          const disponibiliter = document.getElementById("disponibiliter").value.toLowerCase();
+  
+          const filteredBooks = livres.filter(livre => 
+            (titre === "" || livre.titre.toLowerCase().includes(titre)) &&
+            (auteur === "" || livre.auteur.toLowerCase().includes(auteur)) &&
+            (genre === "" || (livre.genre && livre.genre.toLowerCase().includes(genre))) &&
+            (disponibiliter === "" || (livre.disponibiliter && livre.disponibiliter.toLowerCase().includes(disponibiliter)))
+          );
+  
+          displayBooks(filteredBooks);
         });
-});
-// Fonction pour créer un nouvel élément
-function createNode(element) {
-    return document.createElement(element);
-}
-
-// Fonction pour ajouter un élément à un parent
-function append(parent, el) {
-    return parent.appendChild(el);
-}
-
-// Récupération du formulaire et de l'élément où afficher les résultats
-const form = document.getElementById("rechercher-livre-form");
-const main1 = document.querySelector("main");
-
-form.addEventListener("submit", function (event) {
-    event.preventDefault(); // Empêche le rechargement de la page
-
-    // Récupère les valeurs des champs du formulaire
-    const titre = document.getElementById("titre").value;
-    const auteur = document.getElementById("auteur").value;
-    const genre = document.getElementById("genre").value;
-    const disponibiliter = document.getElementById("disponibiliter").value;
-
-    // URL de l'API avec les paramètres de recherche
-    const url = `http://localhost:8080/ords/utilisateurs/recherche/?titre=${titre}&auteur=${auteur}&genre=${genre}&disponibiliter=${disponibiliter}`;
-
-    // Effectue la requête de recherche
-    fetch(url)
-        .then((resp) => resp.json())
-        .then(function (data) {
-            // Supprime les résultats précédents
-            const previousResults = document.getElementById("resultats-recherche");
-            if (previousResults) {
-                main.removeChild(previousResults);
-            }
-
-            // Crée un conteneur pour les résultats
-            const resultsContainer = createNode("div");
-            resultsContainer.id = "resultats-recherche";
-
-            // Affiche les résultats de la recherche
-            let livres = data.items;
-            if (livres.length === 0) {
-                const noResultsMessage = createNode("p");
-                noResultsMessage.innerHTML = "Aucun livre trouvé.";
-                append(resultsContainer, noResultsMessage);
-            } else {
-                let ul = createNode("ul");
-                livres.forEach(function (livre) {
-                    let li = createNode("li"),
-                        span = createNode("span");
-                    span.innerHTML = `${livre.id} - ${livre.titre} par ${livre.auteur} (Genre: ${livre.genre}, Disponibilité: ${livre.disponibiliter})`;
-                    append(li, span);
-                    append(ul, li);
-                });
-                append(resultsContainer, ul);
-            }
-            append(main, resultsContainer);
-        })
-        .catch(function (error) {
-            console.log(JSON.stringify(error));
-        });
-});
+      })
+      .catch(function (error) {
+        console.log(JSON.stringify(error));
+      });
+  });
+      

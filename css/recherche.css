@@ -1,145 +1,96 @@
-/* index.css */
-
-/* Style de base pour le corps */
+/* /css/recherche.css */
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #e0f7e9; /* Vert pâle */
-    color: #333; /* Texte légèrement foncé pour la lisibilité */
     line-height: 1.6;
+    color: #4CAF50;
 }
 
-/* Style pour l'en-tête */
 header {
-    background-color: #2e8b57; /* Vert plus foncé */
+    background: #4CAF50;
     color: #fff;
-    padding: 10px 0;
+    padding: 1rem 0;
     text-align: center;
 }
 
-header h1 {
-    margin: 0;
-}
-
-/* Style pour la navigation */
-nav ul {
+header nav ul {
     list-style: none;
     padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
 }
 
-nav ul li {
-    margin: 0 15px;
+header nav ul li {
+    display: inline;
+    margin: 0 1rem;
 }
 
-nav ul li a {
+header nav ul li a {
     color: #fff;
     text-decoration: none;
-    font-weight: bold;
 }
 
-nav ul li a:hover {
-    text-decoration: underline;
-}
-
-/* Style pour le contenu principal */
 main {
-    padding: 20px;
-    max-width: 800px;
-    margin: 20px auto;
-    background-color: #e6ffe6; /* Vert très pâle */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
 }
 
-/* Style pour le formulaire de recherche */
 form {
-    display: flex;
-    flex-direction: column;
+    margin-bottom: 2rem;
+    color: #4CAF50;
 }
 
 form label {
-    margin-top: 10px;
+    display: block;
+    margin-bottom: 0.5rem;
 }
 
 form input {
-    padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #4CAF50;
+    border-radius: 4px;
 }
 
 form button {
-    margin-top: 20px;
-    padding: 10px;
-    background-color: #2e8b57; /* Vert plus foncé */
+    padding: 0.5rem 1rem;
+    background: #4CAF50; /* Green background */
     color: #fff;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    border-radius: 4px;
 }
 
-form button:hover {
-    background-color: #267347; /* Vert encore plus foncé */
+.resultats-container {
+    border-top: 2px solid #4CAF50; /* Green border */
+    padding-top: 2rem;
+    margin-top: 2rem;
 }
 
-/* Style pour la liste des résultats de recherche */
-#resultats-recherche ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+.resultats-container h2 {
+    color: #4CAF50; /* Green text */
+    margin-bottom: 1rem;
 }
 
-#resultats-recherche li {
-    background: #b2dfdb; /* Vert pâle */
-    margin: 10px 0;
-    padding: 15px;
+.resultats-container div {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border: 1px solid #4CAF50; /* Green border */
     border-radius: 5px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition:  0.3s;
+    background-color: #e8f5e9; /* Light green background */
 }
 
-#resultats-recherche li:hover {
-    background: #a2d5c6; /* Vert légèrement plus foncé pour l'effet de survol */
+.resultats-container span {
+    display: block;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: #4CAF50; /* Green text */
 }
 
-/* Style pour les span dans les résultats */
-#resultats-recherche li span {
-    font-size: 16px;
-}
-
-/* Style pour le pied de page */
 footer {
-    background-color: #2e8b57; /* Vert plus foncé */
-    color: #fff;
+    background: #fff; /* White background */
+    color: #4CAF50; /* Green text */
     text-align: center;
-    padding: 10px 0;
-    position: fixed;
+    padding: 1rem 0;
+    border-top: 1px solid #4CAF50; /* Green top border */
+    position: relative;
     bottom: 0;
     width: 100%;
-}
-
-footer p {
-    margin: 0;
-}
-
-/* Media queries pour les petits écrans */
-@media (max-width: 600px) {
-    nav ul {
-        flex-direction: column;
-    }
-
-    nav ul li {
-        margin: 10px 0;
-    }
-
-    main {
-        margin: 10px;
-        padding: 10px;
-    }
 }

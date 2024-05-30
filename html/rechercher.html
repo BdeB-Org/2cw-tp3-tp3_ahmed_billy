@@ -22,15 +22,19 @@
     <main>
         <form id="rechercher-livre-form">
             <label for="titre">Titre:</label>
-            <input type="text" id="titre" name="titre" required>
+            <input type="text" id="titre" name="titre">
             <label for="auteur">Auteur:</label>
-            <input type="text" id="auteur" name="auteur" >
+            <input type="text" id="auteur" name="auteur">
             <label for="genre">Genre:</label>
-            <input type="text" id="genre" name="genre" >
+            <input type="text" id="genre" name="genre">
             <label for="disponibiliter">Disponibilité:</label>
-            <input type="text" id="disponibiliter" name="disponibiliter" >
+            <input type="text" id="disponibiliter" name="disponibiliter">
             <button type="submit">Rechercher</button>
         </form>
+        <section id="resultats" class="resultats-container">
+            <h2>Résultats de la recherche</h2>
+            <div id="livres"></div>
+        </section>
     </main>
     <footer>
         <p>&copy; 2024 Notre Entreprise</p>
