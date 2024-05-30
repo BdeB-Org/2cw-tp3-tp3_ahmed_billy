@@ -1,30 +1,22 @@
-function createNode(element) {
-    return document.createElement(element);
-  }
-  
-  function append(parent, el) {
-    return parent.appendChild(el);
-  }
-  
-  //Main
+document.addEventListener("DOMContentLoaded", function() {
   const livres_ul = document.getElementById("livres");
   const elemH1 = document.getElementById("h1");
+  elemH1.textContent = "Liste des livres";
   const url = "http://localhost:8080/ords/utilisateurs/livres/";
-  elemH1.innerHTML = "Liste des livres";
-  
+
   fetch(url)
-    .then((resp) => resp.json())
-    .then(function (data) {
-      let livres = data.items;
-      return livres.map(function (livre) {
-        let li = createNode("li"),
-            span = createNode("span");
-        span.innerHTML = `${livre.id} - ${livre.titre} par ${livre.auteur}`;
-        append(li, span);
-        append(livres_ul, li);
+    .then(response => response.json())
+    .then(data => {
+      const livres = data.items;
+      livres.forEach(livre => {
+        const li = document.createElement("li");
+        const span = document.createElement("span");
+        span.textContent = `${livre.id} - ${livre.titre} par ${livre.auteur} (Genre: ${livre.genre || 'Non spécifié'})`;
+        li.appendChild(span);
+        livres_ul.appendChild(li);
       });
     })
-    .catch(function (error) {
-      console.log(JSON.stringify(error));
+    .catch(error => {
+      console.error("Erreur le chargement des données n'a pas pu être commis:", error);
     });
-  
+});
