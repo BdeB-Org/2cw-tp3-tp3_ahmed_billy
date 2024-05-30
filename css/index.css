@@ -7,7 +7,53 @@
 
 body{
     min-height: 100vh;
-    background: url(../images/81q77Q39nEL._AC_UF1000\,1000_QL80_Harryp.jpg);
+    background: url(../images/Arriere_Plan.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    background: black;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo{
+    font-size: 32px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.bar a{
+    position: relative;
+    font-size: 18px;
+    color: white;
+    font-weight: 500;
+    text-decoration: none;
+    margin-left:40px;
+}
+
+.bar a::before{
+content:'';
+position: absolute;
+top:100%;
+left:0;
+width: 0;
+height:2px;
+background: white;
+transition: .3s;
+}
+
+.bar a:hover::before{
+    width: 100%;
 }
 
 
