@@ -44,6 +44,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
       })
       .catch(error => {
+        // Affiche une erreur dans la console si la requête échoue
         console.error("Erreur le chargement n'a pas pu être commis.:", error);
       });
   });
