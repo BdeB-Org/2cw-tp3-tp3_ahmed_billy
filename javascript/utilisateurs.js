@@ -6,13 +6,13 @@ function createNode(element) {
     return parent.appendChild(el);
   }
   
-  // Main
+ 
   const utilisateursUl = document.getElementById("utilisateurs");
   const elemH1 = document.getElementById("h1");
-  const url = "http://127.0.0.1:8080/ords/utilisateurs/utilisateurs"; // Remplacez par l'URL correcte de votre API
+  const url = "http://127.0.0.1:8080/ords/utilisateurs/utilisateurs"; 
   elemH1.innerHTML = "Liste des Utilisateurs";
   
-  // Récupérer les utilisateurs depuis l'API
+
   fetch(url)
     .then((resp) => resp.json())
     .then(function (data) {
