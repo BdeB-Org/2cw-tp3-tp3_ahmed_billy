@@ -9,8 +9,7 @@
 
 -- predefined type, no DDL - XMLTYPE
 
-
-
+-- Création de la table Emprunts
 
 CREATE TABLE emprunts (
     id              NUMBER NOT NULL,
@@ -21,8 +20,13 @@ CREATE TABLE emprunts (
     livres_id       NUMBER NOT NULL
 );
 
+
+
+
 ALTER TABLE emprunts ADD CONSTRAINT emprunts_pk PRIMARY KEY ( id );
 
+
+--Création de la table Livres
 CREATE TABLE livres (
     id             NUMBER NOT NULL,
     titre          VARCHAR2(15) NOT NULL,
@@ -43,6 +47,8 @@ CREATE TABLE retours (
 CREATE UNIQUE INDEX retours__idx ON retours (emprunts_id ASC);
 
 ALTER TABLE retours ADD CONSTRAINT retours_pk PRIMARY KEY ( id );
+
+--Création de la table Utilisateurs
 
 CREATE TABLE utilisateurs (
     id           NUMBER NOT NULL,
@@ -65,6 +71,7 @@ ALTER TABLE retours
     ADD CONSTRAINT retours_emprunts_fk FOREIGN KEY ( emprunts_id )
         REFERENCES emprunts ( id );
 
+-- Insertion des données dans la table de livres
 
         INSERT INTO livres (id, titre, auteur, genre, disponibiliter) VALUES (1, 'Vietnam', 'William', 'Roman', 'O');
 INSERT INTO livres (id, titre, auteur, genre, disponibiliter) VALUES (2, 'Sigma', 'Ahmed', 'Science', 'O');
@@ -77,7 +84,7 @@ INSERT INTO livres (id, titre, auteur, genre, disponibiliter) VALUES (8, 'MJ', '
 INSERT INTO livres (id, titre, auteur, genre, disponibiliter) VALUES (9, 'DBZ', 'Max', 'Drame', 'N');
 INSERT INTO livres (id, titre, auteur, genre, disponibiliter) VALUES (10, 'Pinochio', 'Aymen', 'Roman', 'O');
 
--- Enable ORDS for each table
+-- On actives les ords ici
 BEGIN
   ORDS.enable_object (
     p_enabled      => TRUE, 
